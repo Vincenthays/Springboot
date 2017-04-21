@@ -1,0 +1,33 @@
+{% extends "../layout.twig" %}
+
+{% block title %}Login{% endblock %}
+
+{# remove header #}
+{% block header %}{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/css/login.css" />
+{% endblock %}
+
+{% block javascript %}
+    <script src="/js/login.js"></script>
+{% endblock %}
+
+{% block body %}
+
+    <<div id="cover" style="background-image: url('https://s3-us-west-1.amazonaws.com/powr/defaults/image-slider2.jpg');"></div>
+
+    <form id="login">
+
+        <input type="text" name="login" placeholder="Login" class="form-control"/>
+
+        <input type="password" name="password" placeholder="Mot de passe" class="form-control"/>
+
+        <input type="submit" class="btn" value="Connexion">
+
+    </form>
+
+{% endblock %}
+
+{# remove footer #}
+{% block footer %}{% endblock %}

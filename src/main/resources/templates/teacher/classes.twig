@@ -1,0 +1,13 @@
+{% extends "../layout.twig" %}
+
+{% block title %}Classes{% endblock %}
+
+{% block header %}
+    {% embed "../default/header.twig" %}
+        {% block navbar_menu %}
+            <li class="active"><a href="#">Mes classes</a></li>
+            <li ><a href="quiz">Mes questionnaires</a></li>
+            <li><a href="statistics">Mes statistiques</a></li>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

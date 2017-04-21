@@ -1,0 +1,25 @@
+body {
+    margin-top: 70px;
+}
+
+footer {
+    margin-top: 70px;
+}
+
+/* header */
+
+#logo {
+    height: 45px;
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+/* nav bar */
+
+@media screen and (max-width: 767px) {
+
+    #navbar li a {
+        text-align: center;
+    }
+}
