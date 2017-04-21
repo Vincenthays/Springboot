@@ -18,6 +18,13 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -36,8 +43,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <groupId>org.jtwig</groupId>
+            <artifactId>jtwig-spring-boot-starter</artifactId>
+            <version>5.85.3.RELEASE</version>
         </dependency>
 
         <dependency>
