@@ -29,3 +29,4 @@ if( $('div[data-result]').height() > 700 ) {
         'overflow-y': 'scroll'
     });
 }
+

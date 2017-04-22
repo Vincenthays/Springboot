@@ -11,3 +11,8 @@ $('#login').submit(function(event){
         }
     });
 });
+
+$('#login input[name="login"]')
+    .data('html', 'true')
+    .attr('title', 'Entrer vos <strong>identifiants moodle</strong> afin de vous connecter')
+    .tooltip();
