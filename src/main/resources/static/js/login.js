@@ -5,7 +5,7 @@ $('#login').submit(function(event){
         method: 'POST',
         dataType: 'json',
         data: $(this).serializeArray(),
-        url: '/test',
+        url: '/loginCheck',
         success: function(response) {
             console.log(response);
         }
