@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="db_evaluation@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="db_evaluation">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="db_project"/>
+    <table id="8" parent="2" name="answer"/>
+    <table id="9" parent="2" name="answer_type"/>
+    <table id="10" parent="2" name="class"/>
+    <table id="11" parent="2" name="class_students"/>
+    <table id="12" parent="2" name="evaluation"/>
+    <table id="13" parent="2" name="lecture"/>
+    <table id="14" parent="2" name="question"/>
+    <table id="15" parent="2" name="quiz"/>
+    <table id="16" parent="2" name="quiz_questions"/>
+    <table id="17" parent="2" name="user"/>
+    <column id="18" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="8" name="id_question">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="8" name="id_student">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="8" name="code_answer">
+      <Position>4</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="22" parent="8" name="text">
+      <Position>5</Position>
+      <DataType>longtext|0</DataType>
+    </column>
+    <column id="23" parent="8" name="date">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="24" parent="8" name="id_question">
+      <ColNames>id_question</ColNames>
+    </index>
+    <index id="25" parent="8" name="id_student">
+      <ColNames>id_student</ColNames>
+    </index>
+    <key id="26" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="27" parent="8" name="answer_1">
+      <ColNames>id_question</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>question</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="28" parent="8" name="answer_2">
+      <ColNames>id_student</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="29" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <index id="31" parent="9" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="33" parent="9" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <column id="34" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="10" name="id_teacher">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="10" name="name">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="37" parent="10" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="39" parent="10" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <column id="40" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="11" name="id_class">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="11" name="id_teacher">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="43" parent="11" name="id_class">
+      <ColNames>id_class</ColNames>
+    </index>
+    <index id="44" parent="11" name="id_teacher">
+      <ColNames>id_teacher</ColNames>
+    </index>
+    <key id="45" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="11" name="class_students_1">
+      <ColNames>id_class</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>class</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="47" parent="11" name="class_students_2">
+      <ColNames>id_teacher</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="48" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="12" name="id_lecture">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="12" name="commentary">
+      <Position>3</Position>
+      <DataType>longtext|0</DataType>
+    </column>
+    <index id="51" parent="12" name="id_lecture">
+      <ColNames>id_lecture</ColNames>
+    </index>
+    <key id="52" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="12" name="evaluation_1">
+      <ColNames>id_lecture</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>lecture</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="13" name="id_class_students">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="13" name="date">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="57" parent="13" name="id_class_students">
+      <ColNames>id_class_students</ColNames>
+    </index>
+    <key id="58" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="13" name="lecture_1">
+      <ColNames>id_class_students</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>class_students</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="60" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="14" name="question_text">
+      <Position>2</Position>
+      <DataType>longtext|0</DataType>
+    </column>
+    <column id="62" parent="14" name="answer_type">
+      <Position>3</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="14" name="has_commentary">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="64" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="65" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="66" parent="15" name="id_teacher">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="15" name="title">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+    </column>
+    <column id="68" parent="15" name="date_begin">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="69" parent="15" name="date_end">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="70" parent="15" name="activate">
+      <Position>6</Position>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <index id="71" parent="15" name="id_teacher">
+      <ColNames>id_teacher</ColNames>
+    </index>
+    <key id="72" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="73" parent="15" name="quiz_1">
+      <ColNames>id_teacher</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="74" parent="16" name="id_quiz">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="16" name="id_question">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="76" parent="16" name="id_question">
+      <ColNames>id_question</ColNames>
+    </index>
+    <index id="77" parent="16" name="id_quiz">
+      <ColNames>id_quiz</ColNames>
+    </index>
+    <foreign-key id="78" parent="16" name="quiz_questions_1">
+      <ColNames>id_quiz</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>quiz</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="79" parent="16" name="quiz_questions_2">
+      <ColNames>id_question</ColNames>
+      <RefSchemaName>db_evaluation</RefSchemaName>
+      <RefTableName>question</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="80" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="81" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="17" name="first_name">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="17" name="id_role">
+      <Position>4</Position>
+      <DataType>int(2) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="84" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

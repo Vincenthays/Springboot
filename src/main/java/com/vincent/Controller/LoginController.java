@@ -11,7 +11,8 @@ public class LoginController {
     private LoginService loginService;
 
     @RequestMapping(value = "/loginCheck", method = RequestMethod.POST)
-    public boolean loginCheck(@RequestParam("login") String login, @RequestParam("password") String password) {
+    public boolean loginCheck(@RequestParam("login") String login,
+                              @RequestParam("password") String password) {
         return loginService.loginCheck(login, password);
     }
 }
