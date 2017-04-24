@@ -15,3 +15,8 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+
+idea/* export-ignore
+target/* export-ignore
+Springboot.iml export-ignore
