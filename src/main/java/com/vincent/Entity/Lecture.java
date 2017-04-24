@@ -1,6 +1,7 @@
 package com.vincent.Entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Lecture")
@@ -14,21 +15,13 @@ public class Lecture {
     @Column(name = "name")
     private String name;
 
+    @OneToMany(mappedBy = "lecture")
+    private List<Evaluation> evaluations;
+
+    @ManyToOne
+    @JoinColumn(name = "id_groupe")
+    private Groupe groupe;
+
+
     public Lecture() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

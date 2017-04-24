@@ -4,27 +4,40 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "User")
+@Table
 public class User {
 
     @Id
     @GeneratedValue
-    @Column(name = "id")
+    @Column
     private int id;
 
-    @Column(name = "name")
+    @Column
     private String name;
+
+    @Column
+    private String first_name;
+
+    @ManyToOne
+    @JoinColumn(name = "id_role")
+    private Role role;
 
     @ManyToMany
     @JoinTable(
-            name = "classes_students",
+            name = "students_groups",
             joinColumns = @JoinColumn(name = "id_user", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id_class", referencedColumnName = "id")
+            inverseJoinColumns = @JoinColumn(name = "id_groupe", referencedColumnName = "id")
     )
-    private List<Class> studentClasses;
+    private List<Groupe> studentGroupes;
 
     @OneToMany(mappedBy = "teacher")
-    private List<Class> teacherClasses;
+    private List<Groupe> teacherGroupes;
+
+    @OneToMany(mappedBy = "student")
+    private List<Answer> answers;
+
+    @OneToMany(mappedBy = "teacher")
+    private List<Quiz> quizzes;
 
 
     public User() {}
@@ -46,19 +59,51 @@ public class User {
         this.name = name;
     }
 
-    public List<Class> getStudentClasses() {
-        return studentClasses;
+    public List<Groupe> getStudentGroupes() {
+        return studentGroupes;
     }
 
-    public void setStudentClasses(List<Class> studentClasses) {
-        this.studentClasses = studentClasses;
+    public void setStudentGroupes(List<Groupe> studentGroupes) {
+        this.studentGroupes = studentGroupes;
     }
 
-    public List<Class> getTeacherClasses() {
-        return teacherClasses;
+    public List<Groupe> getTeacherGroupes() {
+        return teacherGroupes;
     }
 
-    public void setTeacherClasses(List<Class> teacherClasses) {
-        this.teacherClasses = teacherClasses;
+    public void setTeacherGroupes(List<Groupe> teacherGroupes) {
+        this.teacherGroupes = teacherGroupes;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public List<Quiz> getQuizzes() {
+        return quizzes;
+    }
+
+    public void setQuizzes(List<Quiz> quizzes) {
+        this.quizzes = quizzes;
     }
 }

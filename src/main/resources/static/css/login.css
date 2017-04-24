@@ -37,5 +37,16 @@ html, body, #cover {
 @media screen and (min-width: 769px) {
     #login {
         width: 300px;
+        left: 20%;
     }
+
+    .tooltip-inner {
+        width: 350px;
+    }
+}
+
+.btn-dark {
+    border-radius: 0;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
 }

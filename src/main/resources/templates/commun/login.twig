@@ -19,18 +19,25 @@
 
     <form id="login">
 
-        <input type="text" name="login" placeholder="Login" class="form-control" required/>
+        <input type="text" name="login" placeholder="Login" class="form-control" required
+        data-toggle="tooltip" data-html="true" title="Entrer vos <strong>identifiants moodle</strong> afin de vous connecter"/>
 
         <input type="password" name="password" placeholder="Mot de passe" class="form-control" required/>
 
         <input type="submit" class="btn" value="Connexion">
 
+        <div class="text-center">
+            <div class="btn btn-dark" data-scroll="#discover">Découvrir</div>
+        </div>
+
     </form>
 
+    <div id="discover">
 
-    test
+        <div class="container">
+            test
+        </div>
+
+    </div>
 
 {% endblock %}
-
-{# remove footer #}
-{% block footer %}{% endblock %}

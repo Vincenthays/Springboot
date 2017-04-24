@@ -12,7 +12,12 @@ $('#login').submit(function(event){
     });
 });
 
-$('#login input[name="login"]')
-    .data('html', 'true')
-    .attr('title', 'Entrer vos <strong>identifiants moodle</strong> afin de vous connecter')
-    .tooltip();
+if ($(window).width() > 768) {
+    $('#login input[name="login"]').data('placement', 'right');
+}
+
+$('[data-toggle="tooltip"]').tooltip();
+
+$('[data-scroll]').click(function(){
+    $('body').animate({scrollTop: $( $(this).data('scroll') ).offset().top}, 1000);
+});

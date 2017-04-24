@@ -1,18 +1,22 @@
 package com.vincent.Entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "Role")
+@Table
 public class Role
 {
     @Id
     @GeneratedValue
-    @Column(name = "id")
+    @Column
     private int id;
 
-    @Column(name = "name")
+    @Column
     private String name;
+
+    @OneToMany(mappedBy = "role")
+    private List<User> users;
 
 
     public Role() {}

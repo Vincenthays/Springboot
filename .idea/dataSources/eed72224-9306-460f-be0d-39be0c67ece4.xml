@@ -9,8 +9,8 @@
     <schema id="3" parent="1" name="information_schema"/>
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
-    <schema id="6" parent="1" name="sys"/>
-    <schema id="7" parent="1" name="db_project"/>
+    <schema id="6" parent="1" name="db_project"/>
+    <schema id="7" parent="1" name="phpmyadmin"/>
     <table id="8" parent="2" name="answer"/>
     <table id="9" parent="2" name="answer_type"/>
     <table id="10" parent="2" name="class"/>

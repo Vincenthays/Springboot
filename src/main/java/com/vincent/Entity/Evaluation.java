@@ -3,18 +3,24 @@ package com.vincent.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Evaluation")
+@Table
 public class Evaluation {
 
     @Id
     @GeneratedValue
-    @Column(name = "id")
+    @Column
     private int id;
 
-    @Column(name = "name")
-    private String name;
+    @Column
+    private String commentary;
+
+    @ManyToOne
+    @JoinColumn(name = "id_lecture")
+    private Lecture lecture;
+
 
     public Evaluation() {}
+
 
     public int getId() {
         return id;
@@ -24,11 +30,19 @@ public class Evaluation {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCommentary() {
+        return commentary;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCommentary(String commentary) {
+        this.commentary = commentary;
+    }
+
+    public Lecture getLecture() {
+        return lecture;
+    }
+
+    public void setLecture(Lecture lecture) {
+        this.lecture = lecture;
     }
 }
