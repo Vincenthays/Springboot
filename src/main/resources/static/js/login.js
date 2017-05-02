@@ -7,7 +7,24 @@ $('#login').submit(function(event){
         data: $(this).serializeArray(),
         url: '/loginCheck',
         success: function(response) {
-            console.log(response);
+            if (!response) {
+                $('#login')
+                    .animate({marginLeft: '+5px', marginRight: '-5px'}, 0)
+                    .animate({marginLeft: '-10px', marginRight: '+10px'}, 50)
+                    .animate({marginLeft: '+10px', marginRight: '-10px'}, 100)
+                    .animate({marginLeft: '-10px', marginRight: '+10px'}, 150)
+                    .animate({marginLeft: '0px', marginRight: '0px'}, 150);
+
+                $('#login input')
+                    .not('#login input[type="submit"]')
+                    .css('border', '1px solid red');
+
+                $('#login input[name="password"]').val('');
+
+                $('#incorrect-information').show();
+            } else {
+                $('#incorrect-information').hide();
+            }
         }
     });
 });

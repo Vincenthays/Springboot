@@ -24,7 +24,7 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "students_groups",
+            name = "students_groupes",
             joinColumns = @JoinColumn(name = "id_user", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "id_groupe", referencedColumnName = "id")
     )

@@ -1,6 +1,6 @@
 package com.vincent.Controller;
 
-import com.vincent.Service.LdapService;
+import com.vincent.Service.LDAPService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class    LoginController {
 
     @Autowired
-    private LdapService ldapService;
+    private LDAPService ldapService;
 
     @RequestMapping(value = "/loginCheck", method = RequestMethod.POST)
     public boolean loginCheck(@RequestParam("login") String login,

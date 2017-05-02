@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class AnswerType {
+public class QuestionType {
 
     @Id
     @GeneratedValue
@@ -14,7 +14,7 @@ public class AnswerType {
     @Column(unique = true)
     private String name;
 
-    public AnswerType() {}
+    public QuestionType() {}
 
     public int getId() {
         return id;

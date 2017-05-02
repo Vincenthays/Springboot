@@ -2,6 +2,7 @@ package com.vincent.Entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table
@@ -20,15 +21,14 @@ public class Answer {
     @JoinColumn(name = "id_student")
     private User student;
 
-    @ManyToOne
-    @JoinColumn(name = "id_answerType")
-    private AnswerType answerType;
-
     @Column
     private String text;
 
     @Column
     private Date date;
+
+    @OneToMany(mappedBy = "answer")
+    private List<Quiz_question_answer> quiz_question_answers;
 
 
     public Answer() {}
@@ -58,14 +58,6 @@ public class Answer {
         this.student = student;
     }
 
-    public AnswerType getAnswerType() {
-        return answerType;
-    }
-
-    public void setAnswerType(AnswerType answerType) {
-        this.answerType = answerType;
-    }
-
     public String getText() {
         return text;
     }
@@ -80,5 +72,13 @@ public class Answer {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public List<Quiz_question_answer> getQuiz_question_answers() {
+        return quiz_question_answers;
+    }
+
+    public void setQuiz_question_answers(List<Quiz_question_answer> quiz_question_answers) {
+        this.quiz_question_answers = quiz_question_answers;
     }
 }

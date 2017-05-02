@@ -1,7 +1,6 @@
 package com.vincent.Controller.API;
 
 import com.vincent.Entity.User;
-import com.vincent.Repository.UserRepository;
 import com.vincent.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

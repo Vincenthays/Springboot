@@ -12,6 +12,9 @@ public class Groupe {
     @Column
     private int id;
 
+    @Column
+    private String name;
+
     @ManyToOne
     @JoinColumn(name = "id_teacher")
     private User teacher;
@@ -32,6 +35,14 @@ public class Groupe {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public User getTeacher() {

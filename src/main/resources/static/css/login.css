@@ -50,3 +50,8 @@ html, body, #cover {
     color: white;
     background-color: rgba(0,0,0,0.4);
 }
+
+#incorrect-information {
+    display: none;
+    color: red;
+}

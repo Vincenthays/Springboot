@@ -37,6 +37,9 @@ public class Quiz {
     @JoinColumn(name = "id_teacher")
     private User teacher;
 
+    @OneToMany(mappedBy = "quiz")
+    private List<Quiz_question_answer> quiz_question_answers;
+
 
     public Quiz() {}
 
@@ -87,5 +90,21 @@ public class Quiz {
 
     public void setActivate(boolean activate) {
         this.activate = activate;
+    }
+
+    public User getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(User teacher) {
+        this.teacher = teacher;
+    }
+
+    public List<Quiz_question_answer> getQuiz_question_answers() {
+        return quiz_question_answers;
+    }
+
+    public void setQuiz_question_answers(List<Quiz_question_answer> quiz_question_answers) {
+        this.quiz_question_answers = quiz_question_answers;
     }
 }

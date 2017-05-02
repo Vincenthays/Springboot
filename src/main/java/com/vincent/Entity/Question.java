@@ -25,6 +25,14 @@ public class Question {
     private boolean has_commentary;
 
 
+    @ManyToOne
+    @JoinColumn(name = "id_questionType")
+    private QuestionType questionType;
+
+    @OneToMany(mappedBy = "question")
+    private List<Quiz_question_answer> quiz_question_answers;
+
+
     public Question() {}
 
 
@@ -66,5 +74,21 @@ public class Question {
 
     public void setHas_commentary(boolean has_commentary) {
         this.has_commentary = has_commentary;
+    }
+
+    public QuestionType getQuestionType() {
+        return questionType;
+    }
+
+    public void setQuestionType(QuestionType questionType) {
+        this.questionType = questionType;
+    }
+
+    public List<Quiz_question_answer> getQuiz_question_answers() {
+        return quiz_question_answers;
+    }
+
+    public void setQuiz_question_answers(List<Quiz_question_answer> quiz_question_answers) {
+        this.quiz_question_answers = quiz_question_answers;
     }
 }
