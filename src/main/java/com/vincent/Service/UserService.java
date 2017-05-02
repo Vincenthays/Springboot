@@ -29,4 +29,8 @@ public class UserService {
     public void deleteById(int id) {
         userRepository.deleteById(id);
     }
+
+    public boolean exists(int id) {
+        return userRepository.exists(id);
+    }
 }

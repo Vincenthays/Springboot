@@ -8,7 +8,6 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue
     @Column
     private int id;
 
