@@ -10,24 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/teacher")
 public class TeacherController {
 
+    private final TeacherService teacherService;
+
     @Autowired
-    private TeacherService teacherService;
-
-    @RequestMapping(value = "/classes")
-    public String classes(Model model) {
-        // model.addAttribute("users", userService.findAll());
-        return "teacher/classes";
+    public TeacherController(TeacherService teacherService) {
+        this.teacherService = teacherService;
     }
 
-    @RequestMapping(value = "/quiz")
-    public String quiz(Model model) {
-        // model.addAttribute("users", userService.findAll());
-        return "teacher/quiz";
+    @RequestMapping(value = "/group")
+    public String groupIndex() {
+        return "teacher/group";
     }
 
-    @RequestMapping(value = "/statistics")
-    public String statistics(Model model) {
-        // model.addAttribute("users", userService.findAll());
-        return "teacher/statistics";
-    }
 }
