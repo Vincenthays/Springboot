@@ -1,5 +1,6 @@
 /**
  * Created by yerimju on 2017-04-25.
+ * 
  */
 
 if (typeof jQuery !== 'undefined') {
@@ -20,7 +21,7 @@ if (typeof jQuery !== 'undefined') {
                 },
                 success: callback
             });
-        },
+        }
     };
 
     $(function () {

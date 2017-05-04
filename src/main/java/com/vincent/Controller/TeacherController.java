@@ -17,9 +17,16 @@ public class TeacherController {
         this.teacherService = teacherService;
     }
 
+    @RequestMapping(value = "/index")
+    public String index() {
+        return "redirect:/teacher/group";
+    }
+
     @RequestMapping(value = "/group")
-    public String groupIndex() {
+    public String group() {
         return "teacher/group";
     }
+
+
 
 }

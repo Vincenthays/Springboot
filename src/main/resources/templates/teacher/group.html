@@ -11,7 +11,7 @@
     <script th:src="@{/js/bootstrap-notify.js}"></script>
     <script th:src="@{/js/bootstrap-datepicker.js}"></script>
     <script th:src="@{/js/roux-api.js}"></script>
-    <script layout:fragment="extrascript">
+    <script>
 
         $(function () {
 
@@ -146,7 +146,7 @@
                 {
                     var search_events = "change paste keyup";
 
-                    // Search VGroup
+                    // Search Group
                     $("#input-group-search").on(search_events, function () {
                         var list = $(".group-button-list .group-button");
                         var search_substring = $(this).val();
@@ -199,7 +199,7 @@
                     });
                 }
 
-                // New VGroup Pop-up
+                // New Group Pop-up
                 $('[name=create-new-group]').click(function (e) {
 
                     var group_name_field = $("input[name=group-name]");
@@ -259,7 +259,7 @@
                     });
                 }
 
-                // Select VGroup
+                // Select Group
                 $(".group-button").click(function () {
                     var selectGroupButton = function (button, select) {
                         if (select) {
@@ -464,7 +464,7 @@
                     $(this).find("textarea[name=comment-area]").focus();
                 });
 
-                // Delete VGroup
+                // Delete Group
                 $(".title-button").click(function () {
                     swal({
                         title: "Are you sure?",
@@ -550,7 +550,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand header-brand" th:href="@{/teacher/index}" layout:fragment="nav-header">
-                <img class="header-icon" th:src="@{/img/roux.png}">
+                <img class="header-icon" th:src="@{/img/roux.png}" src="">
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -568,7 +568,7 @@
 
     <div class="row roux-row">
 
-        <VGrouproup Panel -->
+        <!-- Group Panel -->
         <div class="col-md-4">
             <div class="panel panel-default roux-panel">
                 <div class="panel-body">
@@ -606,7 +606,7 @@
             </div>
         </div>
 
-        <VGrouproup Title -->
+        <!-- Group Title -->
         <div class="col-md-8">
             <div class="panel panel-default roux-panel">
                 <div class="panel-body">
@@ -638,7 +638,18 @@
                                 Student 1
                                 <span class="glyphicon glyphicon-ok btn-icon float-right"></span>
                             </button>
-                            <div class="student-button-list"></div>
+                            <div class="student-button-list">
+                                <!--
+                            {% for stuid in "2345678" %}
+                                <button type="button" class="btn btn-default btn-block student-button"
+                                        data-id="{{ stuid }}"
+                                        data-action="select">
+                                    Student {{ stuid }}
+                                    <span class="glyphicon glyphicon-plus btn-icon float-right"></span>
+                                </button>
+                            {% endfor %}
+                            -->
+                            </div>
                         </div>
                     </div>
                     <br>
@@ -684,9 +695,7 @@
             <div class="panel panel-default roux-panel">
 
                 <div class="panel-heading">
-                    <h3 class="session-panel-title">
-                        Session
-                    </h3>
+                    <h3 class="session-panel-title">Session</h3>
                 </div>
 
                 <div class="panel-body">
@@ -727,6 +736,7 @@
                                 <div class="panel-body">
                                     <div class="input-group">
                                         <input type="text" class="form-control select-date"
+                                               title=""
                                                data-id=""
                                                readonly>
                                         <span class="input-group-addon">
@@ -758,6 +768,7 @@
                                 <div class="panel-body">
                                     <div class="input-group">
                                         <input type="text" class="form-control select-date"
+                                               title=""
                                                data-id=""
                                                readonly>
                                         <span class="input-group-addon">
@@ -819,7 +830,7 @@
         </div>
     </div>
 
-    <!-- Modal (Pop-VGrouproup Add -->
+    <!-- Modal (Pop-up) Group Add -->
     <div class="modal fade" id="new-group-popup" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -902,7 +913,7 @@
                     </div>
 
                     <div class="comment-input">
-                        <textarea name="comment-area" class="form-control" rows="6"></textarea>
+                        <textarea name="comment-area" class="form-control" rows="6" title=""></textarea>
                     </div>
 
                 </div>

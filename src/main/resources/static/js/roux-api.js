@@ -115,11 +115,11 @@ if (typeof jQuery !== 'undefined') {
 
     $(function () {
         $.ajaxSetup({
-            url: "/api/v1",
+            url: "//localhost:8000/api/v1", // TEST SERVER
             method: "POST",
             dataType: "json",
             timeout: 10000,
-            async: true // Async ??
+            async: true // ASYNC ??
         });
     });
 

@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "VGroup")
-public class VGroup {
+@Table(name = "RouxGroup")
+public class RouxGroup {
 
     @Id
     @GeneratedValue
@@ -19,11 +19,11 @@ public class VGroup {
     @JoinColumn(name = "id_teacher")
     private User teacher;
 
-    @ManyToMany(mappedBy = "studentVGroups")
+    @ManyToMany(mappedBy = "studentRouxGroups")
     private List<User> students;
 
 
-    public VGroup() {}
+    public RouxGroup() {}
 
 
     public int getId() {
