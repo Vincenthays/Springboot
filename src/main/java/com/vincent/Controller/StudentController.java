@@ -3,25 +3,17 @@ package com.vincent.Controller;
 import com.vincent.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/student")
 public class StudentController {
 
+    private final StudentService studentService;
+
     @Autowired
-    private StudentService studentService;
-
-    @RequestMapping(value = "/classes")
-    public String classes(Model model) {
-        // model.addAttribute("users", studentService.findAll());
-        return "student/classes";
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
     }
 
-    @RequestMapping(value = "/lectures")
-    public String lectures(Model model) {
-        // model.addAttribute("users", studentService.findAll());
-        return "student/lectures";
-    }
 }

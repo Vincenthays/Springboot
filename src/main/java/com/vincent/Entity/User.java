@@ -17,14 +17,14 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "classes_students",
+            name = "roux_group_students",
             joinColumns = @JoinColumn(name = "id_user", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id_class", referencedColumnName = "id")
+            inverseJoinColumns = @JoinColumn(name = "id_roux_group", referencedColumnName = "id")
     )
-    private List<Class> studentClasses;
+    private List<RouxGroup> studentRouxGroups;
 
     @OneToMany(mappedBy = "teacher")
-    private List<Class> teacherClasses;
+    private List<RouxGroup> teacherRouxGroups;
 
 
     public User() {}
@@ -46,19 +46,19 @@ public class User {
         this.name = name;
     }
 
-    public List<Class> getStudentClasses() {
-        return studentClasses;
+    public List<RouxGroup> getStudentRouxGroups() {
+        return studentRouxGroups;
     }
 
-    public void setStudentClasses(List<Class> studentClasses) {
-        this.studentClasses = studentClasses;
+    public void setStudentRouxGroups(List<RouxGroup> studentRouxGroups) {
+        this.studentRouxGroups = studentRouxGroups;
     }
 
-    public List<Class> getTeacherClasses() {
-        return teacherClasses;
+    public List<RouxGroup> getTeacherRouxGroups() {
+        return teacherRouxGroups;
     }
 
-    public void setTeacherClasses(List<Class> teacherClasses) {
-        this.teacherClasses = teacherClasses;
+    public void setTeacherRouxGroups(List<RouxGroup> teacherRouxGroups) {
+        this.teacherRouxGroups = teacherRouxGroups;
     }
 }
