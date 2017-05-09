@@ -2,12 +2,61 @@
 
 {% block title %}Classes{% endblock %}
 
+{% block javascript %}
+    <script src="/js/teacher/classes.js"></script>
+{% endblock %}
+
 {% block header %}
     {% embed "../default/header.twig" %}
         {% block navbar_menu %}
-            <li class="active"><a href="#">Mes classes</a></li>
-            <li ><a href="quiz">Mes questionnaires</a></li>
+            <li class="active"><a href="classes">Mes classes</a></li>
+            <li><a href="questions">Mes questions</a></li>
+            <li><a href="quiz">Mes questionnaires</a></li>
             <li><a href="statistics">Mes statistiques</a></li>
         {% endblock %}
     {% endembed %}
 {% endblock %}
+
+
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="list-group">
+                <div class="list-group-item active">
+                    <input type="text" class="form-control" placeholder="Recherche" data-livesearch>
+                </div>
+                <div data-result id="lsit-teacher-groupes">
+                    {% for groupe in groupes %}
+                        <div class="list-group-item" id="{{ groupe.id }}">{{ groupe.name }}</div>
+                    {% endfor %}
+                </div>
+                <button class="btn btn-block" data-toggle="modal" data-target="#add-student">Ajouter un élève</button>
+            </div>
+        </div>
+
+
+        <div class="col-md-9">
+
+        </div>
+    </div>
+
+
+    {% embed "../default/modal.twig" %}
+        {% block id %}add-student{% endblock %}
+        {% block title %}Ajouter un élève{% endblock %}
+        {% block body %}
+            <form id="form-add-student">
+                <input type="number" placeholder="Numéro étudiant" name="id" class="form-control" required><br/>
+                <input type="text" placeholder="Nom" name="name" class="form-control" required><br/>
+                <input type="text" placeholder="Prénom" name="first_name" class="form-control" required><br/>
+                <div class="text-right">
+                    <input type="submit" class="btn btn-success" value="Sauvegarder">
+                </div>
+            </form>
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}
+
