@@ -23,5 +23,5 @@ $('#form-add-student').submit(function(event) {
 
 
 $('#lsit-teacher-groupes div').onclick(function () {
-    console.log($(this))
+    console.log($(this));
 })
